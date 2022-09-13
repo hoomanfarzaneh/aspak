@@ -1,0 +1,31 @@
+.app{
+    // height: 100vh;
+    overflow: hidden;
+
+    .section{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        // top :50px;
+        scroll-behavior: smooth;
+        // scroll-snap-type: y mandatory;
+        // scrollbar-width: none;
+        // &::-webkit-scrollbar{
+        //     display: none;
+        // }
+
+        > *{
+            width: 100vw;
+            height:max-content;
+            scroll-snap-align: start;
+        }
+    }
+
+
+    .link{
+        color: inherit;
+        text-decoration: none;
+    }
+
+}
+    

@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import { useState } from 'react'
+import About from '../src/components/about/About'
+import Contact from '../src/components/contact/Contact';
+import Main from '../src/components/main/Main';
+import Menu from '../src/components/menu/Menu';
+import Navbar from '../src/components/navbar/Navbar'
+import Project from '../src/components/project/Project';
+import Service from '../src/components/service/Service';
+const App = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className='app'>
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+        <div className="section">
+          <Main />
+          <About />
+          <Service />
+          <Project />
+          <Contact />
+        </div>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
